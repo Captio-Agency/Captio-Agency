@@ -6,7 +6,9 @@
   <title>Captio Agency — Contenu réseaux sociaux pour les commerces</title>
   <meta name="description" content="Vous envoyez vos photos, je rédige les posts et légendes pour vos réseaux sociaux. Simple, rapide, efficace.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --blue: #2563EB;
@@ -41,7 +43,7 @@
       font-family: 'Syne', sans-serif;
       font-weight: 800; font-size: 20px;
       letter-spacing: -0.5px;
-      display: flex; align-items: center; gap: 4px;
+      display: flex; align-items: center; gap: 6px;
     }
     .logo span { color: var(--blue); }
     .logo-dot {
@@ -58,12 +60,20 @@
     .nav-btn:hover { background: var(--blue); transform: translateY(-1px); }
 
     /* HERO */
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     .hero {
       min-height: 100vh;
       display: flex; flex-direction: column; justify-content: center; align-items: center;
       text-align: center;
       padding: 8rem 2rem 4rem;
-      background: linear-gradient(160deg, #f8faff 0%, #ffffff 50%, #f0f7ff 100%);
+      background: linear-gradient(135deg, #f0f7ff, #ffffff, #e8f0fe, #f8faff);
+      background-size: 400% 400%;
+      animation: gradientShift 8s ease infinite;
       position: relative; overflow: hidden;
     }
     .hero::before {
@@ -118,7 +128,7 @@
     .btn-primary {
       background: var(--blue); color: var(--white);
       border: none; padding: 14px 32px; border-radius: 10px;
-      font-family: 'DM Sans', sans-serif; font-size: 14px;
+      font-family: 'DM Sans', sans-serif; font-size: 16px;
       font-weight: 500; cursor: pointer; text-decoration: none;
       transition: transform 0.15s, box-shadow 0.15s;
       box-shadow: 0 4px 20px rgba(37,99,235,0.3);
@@ -141,7 +151,7 @@
     /* TICKER */
     .ticker {
       background: var(--blue); overflow: hidden;
-      padding: 12px 0; border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 12px 0;
     }
     .ticker-inner {
       display: flex; gap: 48px;
@@ -199,7 +209,8 @@
       width: 36px; height: 36px; border-radius: 50%;
       background: var(--dark); color: var(--white);
       display: flex; align-items: center; justify-content: center;
-      font-size: 14px; font-weight: 700; margin-bottom: 1rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 16px; font-weight: 700; margin-bottom: 1rem;
     }
     .process-step h3 { font-size: 17px; font-weight: 500; margin-bottom: 6px; }
     .process-step p { font-size: 14px; color: var(--gray); line-height: 1.6; }
@@ -226,11 +237,11 @@
     .offer-desc { font-size: 13px; color: var(--gray); margin-bottom: 1rem; }
     .offer.featured .offer-desc { color: rgba(255,255,255,0.55); }
     .offer-price {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Playfair Display', serif;
       font-size: 32px; font-weight: 800; color: var(--blue); margin-bottom: 1.5rem;
     }
     .offer.featured .offer-price { color: var(--white); }
-    .offer-price span { font-size: 15px; color: var(--gray); font-weight: 400; font-family: 'Playfair Display', serif; }
+    .offer-price span { font-size: 15px; color: var(--gray); font-weight: 400; font-family: 'DM Sans', sans-serif; }
     .offer.featured .offer-price span { color: rgba(255,255,255,0.55); }
     .offer ul { list-style: none; }
     .offer ul li {
@@ -289,13 +300,15 @@
       .stat { border-right: none; border-bottom: 1px solid var(--border); }
       .stat:last-child { border-bottom: none; }
       section { padding: 4rem 1.25rem; }
+      .btn-primary { font-size: 13px; padding: 11px 22px; }
+      .btn-outline { font-size: 13px; padding: 11px 22px; }
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <div class="logo">Captio<span>Agency</span><div class="logo-dot"></div></div>
+    <div class="logo">✒️ Captio<span>Agency</span><div class="logo-dot"></div></div>
     <a href="#contact" class="nav-btn">Me contacter</a>
   </nav>
 
@@ -384,7 +397,7 @@
         <div class="offer">
           <h3>Starter</h3>
           <div class="offer-desc">Pour tester et voir le résultat</div>
-          <div class="offer-price">150€ <span>/ mois</span></div>
+          <div class="offer-price">100€ <span>/ mois</span></div>
           <ul>
             <li>8 posts par mois</li>
             <li>Légendes + hashtags</li>
@@ -396,7 +409,7 @@
           <div class="offer-badge">⭐ Le plus choisi</div>
           <h3>Pro</h3>
           <div class="offer-desc">Pour une présence régulière et pro</div>
-          <div class="offer-price">300€ <span>/ mois</span></div>
+          <div class="offer-price">200€ <span>/ mois</span></div>
           <ul>
             <li>12 posts par mois</li>
             <li>Légendes + hashtags + bio</li>
@@ -408,7 +421,7 @@
         <div class="offer">
           <h3>Premium</h3>
           <div class="offer-desc">Pour aller encore plus loin</div>
-          <div class="offer-price">400€ <span>/ mois</span></div>
+          <div class="offer-price">350€ <span>/ mois</span></div>
           <ul>
             <li>16 posts par mois</li>
             <li>Stratégie éditoriale complète</li>
@@ -431,45 +444,45 @@
           <div class="post-meta">
             <div class="post-avatar" style="background:#2563EB;">SC</div>
             <div>
-              <div class="post-name">Salon de coiffure · Choisy-le-Roi</div>
+              <div class="post-name">Salon de coiffure · Grenoble</div>
               <div class="post-type">Objectif : attirer de nouveaux clients</div>
             </div>
           </div>
-          <div class="post-body">"On sait que choisir un nouveau salon c'est pas anodin. On vous confie ses cheveux, pas juste une coupe. Nous on prend le temps d'écouter ce que vous voulez, ce que vous n'osez pas toujours demander ailleurs. ☕✂️"</div>
-          <div class="post-tags">#Coiffure #ChoisyLeRoi</div>
+          <div class="post-body">"On sait que choisir un nouveau salon c'est pas anodin. On vous confie ses cheveux, pas juste une coupe. Nous on prend le temps d'écouter ce que vous voulez. ☕✂️"</div>
+          <div class="post-tags">#Coiffure #Grenoble</div>
         </div>
         <div class="post">
           <div class="post-meta">
             <div class="post-avatar" style="background:#059669;">RM</div>
             <div>
-              <div class="post-name">Ristorante della Mama · Orly</div>
+              <div class="post-name">Ristorante Italiano · Paris</div>
               <div class="post-type">Objectif : présenter le produit phare</div>
             </div>
           </div>
-          <div class="post-body">"Il y a des desserts. Et puis il y a notre tiramisu café. ☕🤌 Fait maison, chaque jour. Pas de raccourci, pas de version industrielle — juste la recette, le soin, et un peu d'amore dedans."</div>
+          <div class="post-body">"Il y a des desserts. Et puis il y a notre tiramisu café. ☕🤌 Fait maison, chaque jour. Pas de raccourci — juste la recette, le soin, et un peu d'amore dedans."</div>
           <div class="post-tags">#Tiramisu #DolceVita #FaitMaison</div>
         </div>
         <div class="post">
           <div class="post-meta">
             <div class="post-avatar" style="background:#7C3AED;">SC</div>
             <div>
-              <div class="post-name">Salon de coiffure · Choisy-le-Roi</div>
+              <div class="post-name">Salon de coiffure · Reims</div>
               <div class="post-type">Objectif : présenter une promotion</div>
             </div>
           </div>
-          <div class="post-body">"Ce mois-ci on fait un geste pour les nouveaux visages. 🎉 -20% sur votre première visite, coupe ou couleur, au choix. Pas de conditions cachées, juste l'envie de vous accueillir."</div>
+          <div class="post-body">"Ce mois-ci on fait un geste pour les nouveaux visages. 🎉 -20% sur votre première visite. Pas de conditions cachées, juste l'envie de vous accueillir."</div>
           <div class="post-tags">#Coiffure #Promo</div>
         </div>
         <div class="post">
           <div class="post-meta">
             <div class="post-avatar" style="background:#DC2626;">RM</div>
             <div>
-              <div class="post-name">Ristorante della Mama · Orly</div>
+              <div class="post-name">Ristorante Italiano · Paris</div>
               <div class="post-type">Objectif : montrer la convivialité</div>
             </div>
           </div>
           <div class="post-body">"Il y a des soirs où on n'a pas forcément faim, mais on a envie d'être bien. 🍷 Una bella serata. Un verre de vin, une assiette à partager. Ci vediamo presto. 🤌"</div>
-          <div class="post-tags">#RestaurantItalien #DolceVita #Orly</div>
+          <div class="post-tags">#RestaurantItalien #DolceVita #Paris</div>
         </div>
       </div>
     </div>
@@ -481,7 +494,7 @@
       <h2 class="section-title">On commence quand<br>vous voulez.</h2>
       <p class="section-lead">Première consultation gratuite, sans engagement. Je réponds sous 24h.</p>
       <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <a href="mailto:captio.agency.fr@gmail.com" class="btn-primary">📧 Captio.agency.fr@gmail.com</a>
+        <a href="mailto:captio.agency.fr@gmail.com" class="btn-primary">📧 coaptio.agency.fr@gmail.com</a>
       </div>
     </div>
   </section>
